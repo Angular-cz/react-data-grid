@@ -1,11 +1,1 @@
-src
 **/build
-webpack.config.js
-LICENSE
-.eslintrc
-test
-gulp
-examples
-coveralls.yml
-gulpfile.js
-config
