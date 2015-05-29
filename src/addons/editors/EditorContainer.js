@@ -6,8 +6,8 @@
 */
 'use strict';
 
-var React                   = require('react');
-var joinClasses              = require('classnames');
+var React                   = require('react/addons');
+var joinClasses             = require('classnames');
 var keyboardHandlerMixin    = require('../../KeyboardHandlerMixin');
 var SimpleTextEditor        = require('./SimpleTextEditor');
 var isFunction              = require('../utils/isFunction');
@@ -49,10 +49,6 @@ var EditorContainer = React.createClass({
         inputNode.style.height = this.props.height - 1 + 'px';
       }
     }
-  },
-
-  componentWillUnmount(){
-    this.commit({key : 'Tab'});
   },
 
   validateEditor(){
@@ -118,7 +114,7 @@ var EditorContainer = React.createClass({
   },
 
   onPressArrowUp(e: SyntheticKeyboardEvent){
-    if(this.editorHasResults()){
+  if(this.editorHasResults()){
       e.stopPropagation();
       e.preventDefault();
     }
