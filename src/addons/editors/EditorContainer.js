@@ -212,7 +212,7 @@ var EditorContainer = React.createClass({
     var input = this.getInputNode();
     //taken from http://stackoverflow.com/questions/511088/use-javascript-to-place-cursor-at-end-of-text-in-text-input-element
     var txtLength = input.value.length;
-    if(input.setSelectionRange){
+    if(input.setSelectionRange && input.type == 'text'){
       input.setSelectionRange(txtLength, txtLength);
     }else if(input.createTextRange){
       var fieldRange = input.createTextRange();
